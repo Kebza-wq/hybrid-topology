@@ -1,3 +1,5 @@
+This README provides detailed documentation for my CMPG325 Hybrid Topology Project, combining various network architectures using Cisco Packet Tracer.
+
 # hybrid-topology
 Hybrid Topology Project with VLANs, IPv4, IPv6, DHCP, OSPF, and basic router security.
 
@@ -43,6 +45,9 @@ CMPG325-Hybrid-Topology/
 
 ## 🎯 Project Overview
 This project implements a **hybrid network topology** that integrates multiple architecture types. It demonstrates advanced network engineering principles through **dual-stack IPv4/IPv6 deployment**, **VLAN segmentation**, **OSPF routing**, **DHCPv6 dynamic addressing**, and **enterprise-grade security hardening**.
+The network is divided into two VLANs:
+- **VLAN 10 (Workstations):** PCs and client devices
+- **VLAN 20 (Servers):** Dedicated for server communication and network services
 
 ---
 
@@ -244,6 +249,14 @@ This setup is common in large Local Area Networks (LANs) because it makes the ne
 
 ## ⚙️ Configuration Implementation
 
+🔒Include a short Router Security Overview paragraph
+Each router was configured with basic security best practices:
+- Encrypted passwords using `service password-encryption`
+- Secured console and VTY lines with authentication
+- `enable secret` for privileged access
+- SSH and Telnet enabled for remote management
+- MOTD banner to warn unauthorized users
+
 ### 🔒 Router Security Configuration
 ```bash
 enable
@@ -398,14 +411,18 @@ Verify connectivity and routing tables.
 Save as Hybrid_Topology_Final.pkt.
 Upload .pkt and README.md to your GitHub repository.
 
-💾 GitHub Documentation
+## 🎥 Video Demonstration Outline
 
-The full project is available on GitHub and includes:
-hybrid.pkt — Cisco Packet Tracer project file
-README.md — Full documentation (this file)
-IPv4_&_IPv6_Tables.pdf — Address plan table (optional upload)
-Screenshots of configuration and successful ping tests
-Video demonstration of working topology
+In my video presentation, I will:
+1. Introduce the hybrid topology and explain how it combines bus, ring, star, and extended star structures.
+2. Show the physical layout in Cisco Packet Tracer.
+3. Open the CLI for one router (R1) to demonstrate:
+   - VLAN configuration
+   - IPv4 and IPv6 interface setup
+   - OSPF and DHCPv6 setup
+   - Router security settings (passwords and banner)
+4. Perform ping tests between PCs and servers to verify inter-VLAN communication.
+5. End the video by summarizing how IPv4 and IPv6 coexist and how VLANs isolate network traffic.
 
 ✅ Conclusion
 This project integrated theory and practical application in network design.
