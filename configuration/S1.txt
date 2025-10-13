@@ -1,0 +1,25 @@
+enable
+configure terminal
+hostname S1
+vlan 10
+name PCs
+vlan 20
+name SERVERS
+interface Vlan1
+no ip address
+interface FastEthernet0/1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+interface FastEthernet0/2
+switchport mode access
+switchport access vlan 20
+interface FastEthernet0/3
+switchport mode access
+switchport access vlan 20
+interface FastEthernet0/4
+switchport mode access
+switchport access vlan 10
+spanning-tree portfast default
+ip default-gateway 192.168.11.1
+end
+write memory

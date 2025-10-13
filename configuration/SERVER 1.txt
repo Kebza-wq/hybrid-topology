@@ -1,0 +1,15 @@
+Desktop → IP Configuration:
+
+IP Address: 192.168.11.10
+
+Subnet Mask: 255.255.255.0
+
+Default Gateway: 192.168.11.1
+
+DNS: 192.168.11.10
+
+IPv6: 2001:db8:1:10::10/64 gateway 2001:db8:1:10::1 (optional)
+
+Services → DNS: ON → add record www.example.com → 192.168.11.10
+
+Services → HTTP: ON

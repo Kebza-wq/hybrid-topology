@@ -1,0 +1,13 @@
+IP Address: 192.168.15.10
+
+Subnet Mask: 255.255.255.0
+
+Default Gateway: 192.168.15.1
+
+DNS: 192.168.15.10
+
+FOR IPV6 SET IT TO AUTOMATIC
+
+Services → DNS: ON → add record www.example.com → 192.168.15.10
+
+Services → HTTP: ON

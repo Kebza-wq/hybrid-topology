@@ -1,0 +1,54 @@
+enable
+configure terminal
+hostname R3
+no ip domain-lookup
+interface GigabitEthernet0/0.10
+encapsulation dot1Q 10
+ip address 192.168.3.1 255.255.255.0
+ipv6 address 2001:db8:3::1/64
+interface GigabitEthernet0/0.20
+encapsulation dot1Q 20
+ip address 192.168.13.1 255.255.255.0
+ipv6 address 2001:db8:3:10::1/64
+interface GigabitEthernet0/0
+no ip address
+no shutdown
+interface Serial0/0/0
+ip address 10.0.23.2 255.255.255.252
+ipv6 address 2001:db8:10:23::2/64
+no shutdown
+interface Serial0/0/1
+ip address 10.0.34.1 255.255.255.252
+ipv6 address 2001:db8:10:34::1/64
+no shutdown
+ip routing
+router ospf 1
+network 192.168.3.0 0.0.0.255 area 0
+network 192.168.13.0 0.0.0.255 area 0
+network 10.0.23.0 0.0.0.3 area 0
+network 10.0.34.0 0.0.0.3 area 0
+ipv6 unicast-routing
+ipv6 router ospf 1
+interface GigabitEthernet0/0.10
+ipv6 ospf 1 area 0
+interface GigabitEthernet0/0.20
+ipv6 ospf 1 area 0
+interface Serial0/0/0
+ipv6 ospf 1 area 0
+interface Serial0/0/1
+ipv6 ospf 1 area 0
+ip dhcp pool SITE3-PC
+network 192.168.3.0 255.255.255.0
+default-router 192.168.3.1
+dns-server 192.168.13.10
+exit
+end
+write memory
+
+configure terminal
+interface Serial0/0/0
+clock rate 64000
+end
+write memory
+
+

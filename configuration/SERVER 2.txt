@@ -1,0 +1,7 @@
+Desktop → IP Config: 192.168.11.11 mask 255.255.255.0 gateway 192.168.11.1
+
+Services → IPv6 DHCP: configure prefix 2001:db8:1:10::/64 (optional)
+
+Services → DNS: ON → add record www.example.com → 192.168.11.11
+
+Services → HTTP: ON
