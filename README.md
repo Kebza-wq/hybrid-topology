@@ -46,12 +46,28 @@ This project implements a **hybrid network topology** that integrates multiple a
 
 ---
 
+### Topologies Designed
+1. **Bus Topology**
+2. **Ring Topology**
+3. **Star Topology**
+4. **Extended Star Topology**
+5. **Mesh Topology**
+6. **Hybrid Topology (Final Integration)** — combining Bus, Star, and Ring.
+
+Each topology was designed and tested in **Cisco Packet Tracer** to ensure proper communication and address allocation.
+
 ## 📊 Network Architecture
 
 ### 🔷 Topology Design
 - **Type:** Hybrid (Star + Mesh + Bus elements)  
 - **Scale:** 5 Routers, 5 Switches, 12 End Devices  
 - **Protocols:** OSPFv2, OSPFv3, DHCP, DHCPv6
+  
+### Hybrid Topology Overview
+The hybrid topology integrates the advantages of **Bus**, **Star**, and **Ring**:
+- Bus: Simplifies backbone communication.
+- Star: Provides easy fault isolation.
+- Ring: Ensures redundancy and equal data access.
 
 ### 🏗️ Physical Layout
                           ┌──────────┐
@@ -160,6 +176,21 @@ This project implements a **hybrid network topology** that integrates multiple a
 | R4 ↔ R5 | 10.0.45.0/30 | 2001:db8:10:45::/64 |
 
 ---
+## IPv4 and IPv6 Addressing Tables for Each Topology
+🚌 Bus Topology
+A simple bus topology with 4 PCs connected sequentially using copper straight through cables through multiple switches, demonstrating early network architecture design.
+
+Device	IPv4 Address 	Subnet Mask  	Default Gateway
+PC0	    192.168.10.10	255.255.255.0	192.168.10.1
+PC1	    192.168.10.11	255.255.255.0	192.168.10.1
+PC2	    192.168.10.12	255.255.255.0	192.168.10.1
+PC3	    192.168.10.13	255.255.255.0	192.168.10.1
+PC4	    192.168.10.14	255.255.255.0	192.168.10.1
+
+⭐ Star Topology - Overview
+
+🔄 Ring Topology - Overview
+
 
 ## ⚙️ Configuration Implementation
 
@@ -209,6 +240,11 @@ write memory
 | Cross-Router | R1            | R5                                        | ✅ PASS |
 | IPv6         | PC1           | Server1 IPv6                              | ✅ PASS |
 | DNS          | nslookup      | [www.example.com](http://www.example.com) | ✅ PASS |
+
+🧩 Reflection
+
+The hybrid topology successfully demonstrated how combining multiple topologies enhances flexibility, reliability, and scalability.
+Configuring both IPv4 and IPv6 ensured dual-stack communication, while services such as DHCP, DNS, and VLANs automated network management and security.
 
 🔍 Verification Commands
 # Routing Verification
@@ -312,5 +348,18 @@ Verify connectivity and routing tables.
 Save as Hybrid_Topology_Final.pkt.
 Upload .pkt and README.md to your GitHub repository.
 
-⭐ This project demonstrates professional, multi-protocol network configuration — featuring VLANs, IPv4, IPv6, DHCP/DHCPv6, OSPF, and router security — ideal for academic assessment and portfolio presentation.
+💾 GitHub Documentation
 
+The full project is available on GitHub and includes:
+hybrid.pkt — Cisco Packet Tracer project file
+README.md — Full documentation (this file)
+IPv4_&_IPv6_Tables.pdf — Address plan table (optional upload)
+Screenshots of configuration and successful ping tests
+Video demonstration of working topology
+
+✅ Conclusion
+This project integrated theory and practical application in network design.
+The setup of a hybrid topology with IPv4 & IPv6 dual-stack communication demonstrated proficiency in Cisco Packet Tracer configuration, addressing, and troubleshooting.
+
+⭐ This project demonstrates professional, multi-protocol network configuration — featuring VLANs, IPv4, IPv6, DHCP/DHCPv6, OSPF, and router security — ideal for academic assessment and portfolio presentation.
+© 2025 Kebarileng Makgobe — North-West University (Mafikeng Campus)
