@@ -52,22 +52,23 @@ This project implements a **hybrid network topology** that integrates multiple a
 3. **Star Topology**
 4. **Extended Star Topology**
 5. **Mesh Topology**
-6. **Hybrid Topology (Final Integration)** — combining extended star, Star, and Ring.
+6. **Hybrid Topology (Final Integration)** — combining extended star, Star,Bus,and Ring.
 
 Each topology was designed and tested in **Cisco Packet Tracer** to ensure proper communication and address allocation.
 
 ## 📊 Network Architecture
 
 ### 🔷 Topology Design
-- **Type:** Hybrid (Star + Mesh + extended star elements)  
+- **Type:** Hybrid (Star + ring + bus + extended star elements)  
 - **Scale:** 5 Routers, 5 Switches, 12 End Devices  
 - **Protocols:** OSPFv2, OSPFv3, DHCP, DHCPv6
   
 ### Hybrid Topology Overview
-The hybrid topology integrates the advantages of **Bus**, **Star**, and **Ring**:
+The hybrid topology integrates the advantages of **Bus**, **Star**,**Extended Star**, and **Ring**:
 - Bus: Simplifies backbone communication.
 - Star: Provides easy fault isolation.
 - Ring: Ensures redundancy and equal data access.
+- Extended Star: scalability and centralized control, allowing for easy expansion and management of large networks
 
 ### 🏗️ Physical Layout
                           ┌──────────┐
