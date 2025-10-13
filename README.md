@@ -188,9 +188,49 @@ PC3	    192.168.10.13	255.255.255.0	192.168.10.1
 PC4	    192.168.10.14	255.255.255.0	192.168.10.1
 
 ⭐ Star Topology - Overview
+Star Topology Characteristics
+Central Device: All devices (PC0 through PC4) are connected to a single, central device, which in this case is the Switch0.
+Dedicated Links: Each end device has its own dedicated cable running directly to the switch.
+Benefits: This is the most common LAN topology because it's easy to install, manage, and troubleshoot. If one cable or PC fails, it doesn't affect the rest of the network. * Drawback: If the central switch fails, the entire network segment goes down.
+Device	IPv4 Address 	Subnet Mask  	
+PC0	    10.10.10.1	  255.0.0.0	    
+PC1	    10.10.10.2    255.0.0.0	
+PC2	   	10.10.10.3    255.0.0.0	
+PC3	   	10.10.10.4    255.0.0.0	
+PC4	    10.10.10.5     255.0.0.0	
 
 🔄 Ring Topology - Overview
+A Ring Topology connects every device to exactly two other devices, forming a closed, single-path loop. In this my topology, the four switches (Switch0 to Switch3) already form this ring backbone.
+Simple Cable Management: Installation is straightforward, as only one cable runs between adjacent devices.
+Orderly Data Transmission: Data travels in one direction (unidirectional) or two directions (bidirectional) around the ring. This system prevents collisions and is often managed by a token passing method to control access to the network media.
+PC3	    10.0.0.1	  255.0.0.0	    
+PC0	    10.0.0.2    255.0.0.0	
+PC2	   	10.0.0.3    255.0.0.0	
+PC1	   	10.0.0.4    255.0.0.0	
 
+🔗 Mesh Topology - Overview
+A Full Mesh topology is a network configuration where every device is connected directly to every other device. In this specific diagram, the four 2960-24TT Switches (Switch0 to Switch3) form the full mesh backbone.
+Maximum Redundancy (Fault Tolerance): This is the single greatest advantage. Because there are multiple paths between any two switches, the failure of a single cable or switch port will not disrupt communication. Data can instantly reroute via an alternate path.
+PC0	    10.0.0.1	  255.0.0.0	    
+PC1	    10.0.0.2    255.0.0.0	
+PC2	   	10.0.0.3    255.0.0.0	
+PC3	   	10.0.0.4    255.0.0.0	
+
+🌟 Extended Star Topology
+Core/Root: The 2911 Router (R1) and SW1 form the central point (the root) of the network.
+Hierarchical Structure: SW1 acts as the core switch, connecting to R1 and branching out to other switches.
+Extension: The network is extended by connecting secondary or "edge" switches (SW3,SW4,SW5,SW6) to the primary or "distribution" switches (SW1,SW2).
+Star Segments: Each secondary switch (SW3 through SW6) then connects the end devices (PCs) in a star pattern.
+This setup is common in large Local Area Networks (LANs) because it makes the network scalable and easier to manage and troubleshoot compared to a flat star network.
+PC1	   	 192.168.1.10  255.0.0.0	    
+PC2	     192.168.1.11  255.0.0.0	
+PC3	   	 192.168.2.10  255.0.0.0	
+PC4	   	 192.168.2.11  255.0.0.0	
+PC5	     192.168.3.10  255.0.0.0
+PC6      192.168.3.11  255.0.0.0
+PC7	   	 192.168.4.10  255.0.0.0	
+PC8	   	 192.168.4.11  255.0.0.0	
+ 
 
 ## ⚙️ Configuration Implementation
 
